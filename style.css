@@ -1,0 +1,63 @@
+body
+{
+	max-width: 90%;
+	margin: auto;
+	background-color: #ECF0F1 ;
+}
+canvas
+{
+    background-color: white;
+    margin: 10px;
+    box-shadow: 3px 3px 3px 3px #888888;
+}
+.hide
+{
+	display: none;
+}
+h1
+{
+	color: red ;
+}
+ul 
+{
+	list-style: none;
+}
+p 
+{
+	display: inline-block;
+	margin-right: 30px;
+}
+div {
+
+	border-radius: 100%;
+	display: inline-block;
+	height: 30px;
+	width: 30px;
+	margin: 5px ;
+	background-color: red;
+
+}
+.green
+{
+	background-color : green ;
+}
+.black
+{
+	background-color: black;
+}
+.yellow
+{
+	background-color: yellow;
+}
+.blue
+{
+	background-color: blue ;
+}
+.purple
+{
+	background-color: #800040;
+}
+.marine
+{
+	background-color: #33ccff;
+}
