@@ -4,10 +4,11 @@ var Program = function()
 {
 
 	this.pen 	         = new Pen();
-	this.colorpalette    = new ColorPalette();
+
 	this.slate 		  	 = new Slate(this.pen);
 
-
+	this.colorpalette    = new ColorPalette();
+	
 };
 
 Program.prototype.start = function ()
@@ -22,15 +23,14 @@ Program.prototype.start = function ()
 
 	$('#tool-clear-canvas').on('click',this.slate.clear.bind(this.slate));
 
+	$(document).on('couleur-choisi',this.onPickColor.bind(this)); // declencher un evenement
 
 
-
-
-}
+};
 
 Program.prototype.onClickGetColor = function(event)
 
-	{
+{
 
 	penColor = $(event.currentTarget).data('color');
 
@@ -42,7 +42,7 @@ Program.prototype.onClickGetColor = function(event)
 
 	console.log(this.pen);
 
-	};
+};
 
 Program.prototype.onClickGetsize = function(event)
 
@@ -56,19 +56,26 @@ Program.prototype.onClickGetsize = function(event)
 
 	console.log(this.pen);
 
-}	
+};	
 
 Program.prototype.onClickColorPicker = function()
 {
 
-
-
 	$('#canvas2').toggle();
-
-
-
-
 	
+};
+
+Program.prototype.onPickColor = function()
+{
+
+	//console.log(this.colorpalette.getPickerColor());
+
+
+	this.pen.penColor = this.pen.convertRgbColor(this.colorpalette.getPickerColor());
+
+	console.log(this.pen.penColor);
+
+
 }
 
 
